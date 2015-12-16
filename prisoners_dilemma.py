@@ -114,13 +114,7 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
             return 'loyal'
         else:
             return 'c'
-
-    
-        
-            
-                
-                    
-                            
+                  
     ######
     ######
     #
@@ -151,6 +145,8 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
                 return 'c'
             else:
                 return 'b'
+    elif history[-1]=='b' or opponent_history[-1]=='b':
+        return 'b' # betray is they were severely punished last time
     
 
 
