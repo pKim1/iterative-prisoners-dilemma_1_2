@@ -142,14 +142,16 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
     #only betrays if they were a sucker last round.
     elif player == 2:
         if getting_team_name:
-            return 'loyal vengeful'
+            return 'betray every 3rd round'
         else:
-            if len(opponent_history)==0: #It's the first round: collude
+            # use history, opponent_history, score, opponent_score
+            # to compute your strategy
+            size = len(history)
+            if(size%3==0): #the number of rounds played is a multiple of 3
                 return 'c'
-            elif history[-1]=='c' and opponent_history[-1]=='b':
-                return 'b' # betray if they were severely punished last time
             else:
-                return 'c'
+                return 'b'
+    
 
 
     
