@@ -18,7 +18,7 @@ CSE Project 1.3.5 Collaborating on a Project
 Draft, Do Not Distribute
 Version 12/15/2015 
 '''
-
+set_score = 0
 import random
 def play_round(player1, player2, history1, history2, score1, score2):
     '''
@@ -136,7 +136,7 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
     #only betrays if they were a sucker last round.
     elif player == 2:
         if getting_team_name:
-            return 'betray every 3rd round'
+            return 'WINNER!!!'
         else:
             # use history, opponent_history, score, opponent_score
             # to compute your strategy
@@ -145,6 +145,7 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
                 return 'c'
             else:
                 return 'b'
+                
 
 
     
@@ -579,7 +580,7 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
 
 
 
-
+scores = []
 def play_tournament(num_players):
     #create a list of zeros, one per player
     scores = []
